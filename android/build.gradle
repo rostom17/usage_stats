@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.14'
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -16,7 +16,7 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral() 
     }
 }
 
@@ -41,7 +41,10 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
+        // Retaining minimum SDK 31 (Android 12)
         minSdkVersion 31
+        // Retaining target SDK 35 (or higher)
+        targetSdkVersion 35
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -50,5 +53,5 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0"
 }
