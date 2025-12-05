@@ -42,7 +42,7 @@ android {
     }
     defaultConfig {
         // Retaining minimum SDK 31 (Android 12)
-        minSdkVersion 31
+        minSdkVersion 21
         // Retaining target SDK 35 (or higher)
         targetSdkVersion 35
     }
